@@ -1,5 +1,3 @@
-
-
 """codestar URL Configuration
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -17,9 +15,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("", include("blog.urls"), name="blog-urls"),
     path('summernote/', include('django_summernote.urls')),
-    path('', include('blog.urls'), name='blog_urls'),
+    path("accounts/", include("allauth.urls")),
 ]
